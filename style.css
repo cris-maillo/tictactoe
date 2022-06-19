@@ -28,6 +28,23 @@
     line-height: 70px;
 }
 
+/* remove border for edges */
+.square:nth-child(1), .square:nth-child(2), .square:nth-child(3) {
+	border-top: none;
+}
+
+.square:nth-child(1), .square:nth-child(4), .square:nth-child(7) {
+	border-left: none;
+}
+
+.square:nth-child(3), .square:nth-child(6), .square:nth-child(9) {
+	border-right: none;
+}
+
+.square:nth-child(7), .square:nth-child(8), .square:nth-child(9) {
+	border-bottom: none;
+}
+
 .playeroptions{
     display: flex;
     margin: 10px;
@@ -36,7 +53,7 @@
 }
 
 .active{
-    box-shadow: 0px 0px 30px 5px #0ff;
+    box-shadow: 0px 0px 5px 1px #0ff;
 }
 
 #noughts, #crosses{
@@ -44,4 +61,6 @@
     border: 3px solid black;
     padding: 5px;
 }
+
+
 
