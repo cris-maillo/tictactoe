@@ -1,6 +1,8 @@
 const container = document.getElementById("container");
 const noughts = document.getElementById("noughts");
 const crosses = document.getElementById("crosses");
+const overlay = document.getElementById("overlay");
+
 crosses.classList = "active";
 
 let board = [
@@ -56,14 +58,6 @@ const addMark = function(){
     
 };
 
-function isTie() {
-    for (let i = 0; i < 9; i++) {
-        if (board[i] == "") {
-            return false
-        }
-    }
-    return true
-}
 
 const switchPlayer = function(){
     if (turn === "X"){
@@ -79,9 +73,16 @@ const switchPlayer = function(){
     createBoard();
 }
 
-function endGame(){
-    console.log("End of Game")
+function isTie() {
+    for (let i = 0; i < 9; i++) {
+        if (board[i] == "") {
+            return false
+        }
+    }
+    return true
 }
+
+
 
 
 function checkIfWinner(turn){
@@ -91,6 +92,24 @@ function checkIfWinner(turn){
         })
     })
 } 
+
+function endGame(){
+    console.log("End of Game")
+    for (let i = 0; i < overlay.length; i++) {
+        overlay[i].style.display = "block";
+      }
+    overlay.style.display = "block";
+    document.getElementById("reset").onclick = function(){
+        resetBoard();
+    };
+    
+}
+
+function resetBoard(){
+    console.log("reset")
+    overlay.style.display = "none";
+    createBoard();
+}
 
 
 createBoard();
