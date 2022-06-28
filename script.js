@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 const noughts = document.getElementById("noughts");
 const crosses = document.getElementById("crosses");
 const overlay = document.getElementById("overlay");
+const outcome = document.getElementById("outcome");
 
 crosses.classList = "active";
 
@@ -52,6 +53,7 @@ const addMark = function(){
     }
 
     if (isTie()){
+        outcome.innerHTML = "It is a Tie";
         console.log("tie")
         endGame();
     }
@@ -108,6 +110,10 @@ function endGame(){
 function resetBoard(){
     console.log("reset")
     overlay.style.display = "none";
+    board = [
+        "", "", "",
+        "", "", "",
+        "", "", ""];
     createBoard();
 }
 

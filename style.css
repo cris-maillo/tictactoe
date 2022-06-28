@@ -63,23 +63,9 @@
     width: fit-content;
 }
 
-/*#overlay {
-    position: absolute; 
-    display: none;
-    width: 100%; 
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(218, 218, 218, 0.507);
-    z-index: 2;
-  }
-
-  #overlay div{
-    align-items: center;
-    justify-items: center;
-  }*/
+#reset{
+    cursor: pointer;
+}
 
 .gamecontainer{
     border: 3px solid black;
@@ -95,10 +81,16 @@
     right: 0;
     bottom: 0;
     z-index: 2;
-    background-color: rgba(218, 218, 218, 0.736); 
+    background-color: rgba(209, 209, 209, 0.736); 
     padding: 200px 100px;
     display: none; 
 }
+
+#overlay > * {
+    margin-bottom: 10px;
+    background-color: white;
+}
+
 
 
 
